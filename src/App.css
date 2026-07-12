@@ -1,38 +1,112 @@
-.App {
-  text-align: center;
+.container {
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  background-color: #fafafa;
+  box-shadow: 0 0 10px #888;
+  padding: 25px;
+  border-radius: 10px;
+  min-width: 300px;
+  min-height: 250px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.box {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.container label {
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: center;
+  background-color: #888;
+  padding: 5px;
+  width: fit-content;
+  margin: 20px auto;
+}
+button {
+  cursor: pointer;
+}
+.container input {
+  outline: none;
+  border-radius: 30px;
+  border-color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.container li {
+  padding: 10px;
+  list-style: none;
+}
+.btn-submit {
+  border-radius: 30px;
+  border-color: white;
+  padding: 10px;
+  margin-left: 10px;
+  background-color: black;
   color: white;
+  transition: 0.3s;
+  border: none;
+}
+.btn-submit:hover {
+  background-color: rgba(0, 0, 0, 0.597);
 }
 
-.App-link {
-  color: #61dafb;
+.btn-clear {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: red;
+  border: none;
+  padding: 5px;
+  color: white;
+  width: 70px;
+  height: 35px;
+  border-radius: 6px;
+}
+@media (max-width: 767px) {
+  .container {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+  }
+}
+.container ul div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container li {
+  padding: 0;
+  list-style: none;
+  flex-grow: 1;
+}
+.btn-Delete,
+.btn-Edit {
+  width: 70px;
+  height: 35px;
+  border-radius: 6px;
+  border: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-Delete {
+  background-color: red;
+  margin-left: 15px;
+  margin-bottom: 20px;
+}
+
+.btn-Edit {
+  background-color: blue;
+  margin-left: 8px;
 }
