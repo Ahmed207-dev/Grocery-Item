@@ -37,33 +37,11 @@ button {
   padding: 10px;
   list-style: none;
 }
-.btn-submit {
-  border-radius: 30px;
-  border-color: white;
-  padding: 10px;
-  margin-left: 10px;
-  background-color: black;
-  color: white;
-  transition: 0.3s;
-  border: none;
-}
+
 .btn-submit:hover {
   background-color: rgba(0, 0, 0, 0.597);
 }
 
-.btn-clear {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: red;
-  border: none;
-  padding: 5px;
-  color: white;
-  width: 70px;
-  height: 35px;
-  border-radius: 6px;
-}
 @media (max-width: 767px) {
   .container {
     position: absolute;
@@ -85,8 +63,7 @@ button {
   list-style: none;
   flex-grow: 1;
 }
-.btn-Delete,
-.btn-Edit {
+.btn {
   width: 70px;
   height: 35px;
   border-radius: 6px;
@@ -100,13 +77,27 @@ button {
   align-items: center;
 }
 
-.btn-Delete {
+.btn-delete {
   background-color: red;
-  margin-left: 15px;
-  margin-bottom: 20px;
 }
 
-.btn-Edit {
+.btn-edit {
   background-color: blue;
-  margin-left: 8px;
+}
+.btn-clear {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: red;
+}
+.btn-submit {
+  border-radius: 30px;
+  border-color: white;
+  padding: 10px;
+  margin-left: 10px;
+  background-color: black;
+  color: white;
+  transition: 0.3s;
+  border: none;
 }

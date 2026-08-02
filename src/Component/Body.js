@@ -63,27 +63,29 @@ function Body() {
           return (
             <div key={index} style={{ display: "flex" }}>
               <li>{item}</li>
-              <button
-                className="btn-Delete"
-                onClick={() => {
-                  handleDelete(index);
-                }}
-              >
-                Delete
-              </button>
-              <button
-                className="btn-Edit"
-                onClick={() => {
-                  handleEdit(index);
-                }}
-              >
-                Edit
-              </button>
+              <div style={{ display: "flex", gap: "5px" }}>
+                <button
+                  className="btn btn-delete"
+                  onClick={() => {
+                    handleDelete(index);
+                  }}
+                >
+                  Delete
+                </button>
+                <button
+                  className="btn btn-edit"
+                  onClick={() => {
+                    handleEdit(index);
+                  }}
+                >
+                  Edit
+                </button>
+              </div>
             </div>
           );
         })}
         <button
-          className="btn-clear"
+          className="btn btn-clear"
           onClick={(index) => {
             handleclear(index);
           }}
