@@ -1,47 +1,47 @@
 import { useState } from "react";
 function Body() {
-  const [value, setvalue] = useState([]);
-  const [text, settext] = useState("");
-  const [onEdit, setonEdit] = useState(false);
-  const [Edit, setEdit] = useState(null);
+  const [values, setValues] = useState([]);
+  const [text, setText] = useState("");
+  const [onEdit, setOnEdit] = useState(false);
+  const [itemToEdit, setItemToEdit] = useState(null);
   const handlesubmit = (e) => {
     try {
       e.preventDefault();
       if (!text.trim()) return;
-      if (value.includes(text.trim())) {
+      if (values.includes(text.trim())) {
         alert("");
         return;
       }
-      setvalue([...value, text]);
+      setValues([...values, text]);
       if (onEdit) {
-        const newData = value.map((item, index) => {
-          if (index === Edit) {
+        const newData = values.map((item, index) => {
+          if (index === itemToEdit) {
             return text;
           } else {
             return item;
           }
         });
-        setonEdit(false);
-        setEdit(null);
-        setvalue(newData);
+        setOnEdit(false);
+        setItemToEdit(null);
+        setValues(newData);
       }
     } catch {
       console.log("Error");
     }
   };
   const handleDelete = (index) => {
-    const newData = value.filter((item, i) => i !== index);
-    setvalue(newData);
-    setonEdit(false);
+    const newData = values.filter((item, i) => i !== index);
+    setValues(newData);
+    setOnEdit(false);
   };
   const handleEdit = (index) => {
-    setonEdit(true);
-    setEdit(index);
-    settext(value[index]);
+    setOnEdit(true);
+    setItemToEdit(index);
+    setText(values[index]);
   };
   const handleclear = () => {
-    setvalue([]);
-    setonEdit(false);
+    setValues([]);
+    setOnEdit(false);
   };
   return (
     <>
@@ -50,16 +50,16 @@ function Body() {
           <form onSubmit={handlesubmit}>
             <label>Grocery-Item</label>
             <input
-              value={text}
+              values={text}
               onChange={(e) => {
-                settext(e.target.value);
+                setText(e.target.value);
               }}
               type="text"
             />
             <button className="btn-submit">{onEdit ? "Edit" : "submit"}</button>
           </form>
         </div>
-        {value.map((item, index) => {
+        {values.map((item, index) => {
           return (
             <div key={index} style={{ display: "flex" }}>
               <li>{item}</li>
